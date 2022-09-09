@@ -3,6 +3,35 @@
     {
       "name": "white",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "green",
+      "value": "#1296db"
+    },
+    {
+      "name": "cyan",
+      "value": "#00FFFF"
+    },
+    {
+      "name": "darkGray",
+      "value": "#A9A9A9"
+    },
+    {
+      "name": "silver",
+      "value": "#C0C0C0"
+    }
+    ,
+    {
+      "name": "lightGrey",
+      "value": "#D3D3D3"
+    },
+    {
+      "name": "gainsboro",
+      "value": "#DCDCDC"
+    },
+    {
+      "name": "whiteSmoke",
+      "value": "#F5F5F5"
     }
   ]
 }
