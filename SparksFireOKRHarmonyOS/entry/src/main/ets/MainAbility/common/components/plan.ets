@@ -1,6 +1,5 @@
 @Component
-struct PlanList {
-  
+struct Plan {
   build() {
 
   }
