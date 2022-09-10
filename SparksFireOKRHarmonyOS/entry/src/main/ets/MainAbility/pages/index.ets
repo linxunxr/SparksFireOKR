@@ -1,3 +1,4 @@
+import Matter from '../common/components/matter'
 import display from '@ohos.display';
 @Entry
 @Component
@@ -52,7 +53,9 @@ struct Index {
     }) {
       Tabs({ controller: this.controller }) {
         TabContent() {
-
+          Matter({
+            screenWidth: $screenWidth
+          })
         }.tabBar('事项')
         TabContent() {
 
@@ -82,7 +85,7 @@ struct Index {
           .width(45).height(45)
           .sourceSize({ width: 45, height: 45 })
           Text('事项')
-          .size({ width: '100%', height: 45})
+          .size({ width: '100%', height: 15})
           .textAlign(TextAlign.Center)
           .fontSize(11)
           .fontColor(( this.selectPos == 0 ? $r('app.color.green') : Color.Black))
@@ -165,6 +168,5 @@ struct Index {
       .margin({ top: 0, right: 0, bottom: 10, left: 0})
     }
     .width('100%')
-    .height('100')
   }
 }

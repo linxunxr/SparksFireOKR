@@ -22,19 +22,19 @@ struct Matter {
         .onChange(( index: number) => {
 
         })
-        .backgroundColor($r('app.color.silver'))
+        .backgroundColor($r('app.color.whiteSmoke'))
         Button({ type: ButtonType.Circle}) {
           Image($r('app.media.ic_public_matter_add'))
         }
         .width(50)
-        .backgroundColor($r('app.color.silver'))
+        .backgroundColor($r('app.color.whiteSmoke'))
         .position({ x: 0, y: 5})
         Button({type:ButtonType.Circle}) {
           Image($r('app.media.ic_public_matter_more'))
         }
         .width(50)
         .position({x:300,y:5})
-        .backgroundColor($r('app.color.silver'))
+        .backgroundColor($r('app.color.whiteSmoke'))
       }.width('100%').height('100%').margin({ top: 0 })
     }
     .backgroundColor($r('app.color.silver'))
