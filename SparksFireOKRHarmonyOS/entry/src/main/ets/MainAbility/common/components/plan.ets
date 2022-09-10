@@ -2,9 +2,9 @@
 struct Plan {
   build() {
     Column() {
-      
+
     }
-    .backgroundColor($r('app.color.snow'))
+    .backgroundColor($r('app.color.white'))
     .width('95%')
   }
 }
