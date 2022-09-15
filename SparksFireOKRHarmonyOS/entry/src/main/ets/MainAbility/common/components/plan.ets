@@ -39,10 +39,10 @@ struct Plan {
       .position({ x: 5, y: 55})
       Image($r('app.media.ic_public_plan_begin'))
         .width(50).height(50)
-        .position({ x: 200, y: 10})
+        .position({ x: 180, y: 10})
       Image($r('app.media.ic_public_plan_typeIn'))
         .width(50).height(50)
-        .position({ x: 300, y: 10})
+        .position({ x: 250, y: 10})
     }
     .backgroundColor($r('app.color.white'))
     .width('95%')
