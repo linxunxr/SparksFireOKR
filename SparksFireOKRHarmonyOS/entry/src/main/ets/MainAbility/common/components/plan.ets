@@ -1,4 +1,3 @@
-@Entry
 @Component
 struct Plan {
   @State planName: string = "通信原理"
@@ -20,8 +19,11 @@ struct Plan {
       Text('今日：' + this.planTodayDone + '/' + this.planTodayTarget + this.planTodayType)
       .position({ x: 5, y: 35})
       Row() {
+        Image($r('app.media.ic_public_plan_cycle'))
+          .width(10).height(10)
         Text('每日\t')
           .fontColor(Color.Black)
+          .margin({ left: 5})
         Text('剩余' + this.planTimeLeft + '天')
         .fontColor($r('app.color.cyan'))
         .margin({left: 5, right: 5})
@@ -44,7 +46,8 @@ struct Plan {
     }
     .backgroundColor($r('app.color.white'))
     .width('95%')
-    .height(60)
+    .height(70)
+    .margin({ top: 5 })
   }
 }
 
