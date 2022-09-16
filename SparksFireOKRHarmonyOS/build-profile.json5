@@ -1,6 +1,20 @@
 {
   "app": {
-    "signingConfigs": [],
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\skylinxun\\.ohos\\config\\auto_debug_com.example.sparksfireokrharmonyos_40086000129003941.cer",
+          "storePassword": "0000001946A3434E9E43EFC5D9F9E99EED59BE8DAD99397D390A86BA625D716E5D655D09BEA2274FBA",
+          "keyAlias": "debugKey",
+          "keyPassword": "000000191EE8605B4B8E017D95522638C7D136EA5575146F1AAFBE0275E95F5E0088960C4AEB6336B2",
+          "profile": "C:\\Users\\skylinxun\\.ohos\\config\\auto_debug_com.example.sparksfireokrharmonyos_40086000129003941.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\skylinxun\\.ohos\\config\\auto_debug_com.example.sparksfireokrharmonyos_40086000129003941.p12"
+        }
+      }
+    ],
     "compileSdkVersion": 8,
     "compatibleSdkVersion": 8,
     "products": [
