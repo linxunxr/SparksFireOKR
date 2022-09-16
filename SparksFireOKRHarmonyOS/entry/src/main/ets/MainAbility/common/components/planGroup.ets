@@ -1,5 +1,4 @@
 import Plan from '../components/plan'
-@Entry
 @Component
 struct PlanGroup {
   @State PlanGroupName: string = '专业学习'
@@ -10,8 +9,18 @@ struct PlanGroup {
         Text(this.PlanGroupName)
           .fontSize(20)
           .fontColor($r('app.color.darkGray'))
-          .position({x:5,y:0})
-
+        Button({type:ButtonType.Circle}) {
+          Image($r('app.media.ic_public_plan_setting'))
+        }
+        .margin({ left: 150})
+        .width(30).height(30)
+        .backgroundColor($r('app.color.snow'))
+        Button({type:ButtonType.Circle}) {
+          Image($r('app.media.ic_public_plan_down'))
+        }
+        .margin({ left: 20})
+        .width(30).height(30)
+        .backgroundColor($r('app.color.snow'))
       }
       .height(20)
       .margin({bottom:5})
