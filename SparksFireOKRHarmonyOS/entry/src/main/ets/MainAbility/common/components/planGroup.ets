@@ -2,6 +2,15 @@ import Plan from '../components/plan'
 @Component
 struct PlanGroup {
   @State PlanGroupName: string = '专业学习'
+  @State PlanGroupSelect: number = 0
+
+  public PlanGroupSelectClick() {
+    if (this.PlanGroupSelect == 0) {
+      this.PlanGroupSelect = 1
+    } else {
+      this.PlanGroupSelect = 0
+    }
+  }
 
   build() {
     Column() {
@@ -15,12 +24,13 @@ struct PlanGroup {
         .margin({ left: 150})
         .width(30).height(30)
         .backgroundColor($r('app.color.snow'))
-        Button({type:ButtonType.Circle}) {
-          Image($r('app.media.ic_public_plan_down'))
-        }
+          Image(( this.PlanGroupSelect == 0 ?
+          $r('app.media.ic_public_plan_up') :
+          $r('app.media.ic_public_plan_down')))
         .margin({ left: 20})
         .width(30).height(30)
         .backgroundColor($r('app.color.snow'))
+            .onClick(this.PlanGroupSelectClick.bind(this))
       }
       .height(20)
       .margin({bottom:5})
