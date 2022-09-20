@@ -1,5 +1,7 @@
 import Matter from '../common/components/matter'
-import display from '@ohos.display';
+import display from '@ohos.display'
+import data_rdb from '@ohos.data.rdb'
+import featureAbility from '@ohos.ability.featureAbility'
 @Entry
 @Component
 struct Index {
@@ -42,6 +44,18 @@ struct Index {
   public PersonalClick() {
     this.selectPos = 4
     this.controller.changeIndex(4)
+  }
+  // 初始化数据库
+  initRdb() {
+    var context = featureAbility.getContext()
+    const STORE_CONFIG = { name: "personlSQL.db"}
+    // planList表
+    const SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS planList ("
+  }
+
+  aboutToAppear() {
+    // 初始化数据库
+    this.initRdb()
   }
 
   build() {
