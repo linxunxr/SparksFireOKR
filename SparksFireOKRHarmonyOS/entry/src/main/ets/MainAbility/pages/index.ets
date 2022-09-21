@@ -48,9 +48,21 @@ struct Index {
   // 初始化数据库
   initRdb() {
     var context = featureAbility.getContext()
-    const STORE_CONFIG = { name: "personlSQL.db"}
-    // planList表
-    const SQL_CREATE_TABLE = "CREATE TABLE IF NOT EXISTS planList ("
+    const STORE_CONFIG = { name: "personalSQL.db"}
+    // matter表
+    const SQL_CREATE_TABLE_MATTER = "CREATE TABLE IF NOT EXISTS matter (" +
+            "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+            "title TEXT," +
+            "isEnd INTEGER)"
+    // planGroup表
+    const SQL_CREATE_TABLE_PLAN_GROUP = "CREATE TABLE IF NOT EXISTS planGroup (" +
+    "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+    "title TEXT)"
+    // 新建
+    data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
+      rdbStore.executeSql(SQL_CREATE_TABLE_MATTER)
+      console.info('create table done.')
+    })
   }
 
   aboutToAppear() {
