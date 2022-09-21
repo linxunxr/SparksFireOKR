@@ -53,11 +53,33 @@ struct Index {
     const SQL_CREATE_TABLE_MATTER = "CREATE TABLE IF NOT EXISTS matter (" +
             "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
             "title TEXT," +
+            "type INTEGER" +
             "isEnd INTEGER)"
     // planGroup表
     const SQL_CREATE_TABLE_PLAN_GROUP = "CREATE TABLE IF NOT EXISTS planGroup (" +
     "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
     "title TEXT)"
+    // planUnit表
+    const SQL_CREATE_TABLE_PLAN_UNIT = "CREATE TABLE IF NOT EXISTS planUnit (" +
+    "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+    "planUnit TEXT)"
+    // planRepeatType表
+    const SQL_CREATE_TABLE_PLAN_REPEAT_TYPE = "CREATE TABLE IF NOT EXISTS planRepeatType (" +
+    "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+    "planRepeatType INTEGER)"
+    // plan表
+    const SQL_CREATE_TABLE_PLAN = "CREATE TABLE IF NOT EXISTS planRepeatType (" +
+            "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+            "planGroupI integer," +
+            "planType integer," +
+            "planBeginDate TEXT," +
+            "planEndDate TEXT," +
+            "planRepeat integer," +
+            "planRepeatType integer," +
+            "planRecordType integer," +
+            "planUnit integer," +
+            "planDayTarget integer," +
+            "planSumTarget integer)"
     // 新建
     data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
       rdbStore.executeSql(SQL_CREATE_TABLE_MATTER)

@@ -3,10 +3,12 @@ export class Matter {
   id: number
   title: string
   type: number
+  isEnd: number
 
   constructor(option) {
     this.title = option.title
     this.type = option.type
+    this.isEnd = option.isEnd
   }
 }
 
