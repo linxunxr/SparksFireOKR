@@ -10,6 +10,7 @@ const planUnits: any[] = [
 ]
 
 const planUnitArray: Array<PlanUnit> = []
+<<<<<<< HEAD
 export function init() {
     data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
       for (item in planUnits) {
@@ -19,6 +20,19 @@ export function init() {
   )
 
   data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
+=======
+
+data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
+    for (item in planUnits) {
+      rdbStore.insert("planUnit",item)
+    }
+  }
+)
+
+
+
+data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
+>>>>>>> master
     let promise = rdbStore.querySql("SELECT * FROM planUnit")
     promise.then((resultSet) => {
       const id = resultSet.getLong(resultSet.getColumnIndex("id"))
@@ -30,6 +44,7 @@ export function init() {
       console.info("Query failed, err: " + err)
     })
   }
+<<<<<<< HEAD
   )
 }
 
@@ -37,3 +52,6 @@ export function init() {
 
 
 
+=======
+)
+>>>>>>> master
