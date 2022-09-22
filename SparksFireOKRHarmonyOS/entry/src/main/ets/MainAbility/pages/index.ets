@@ -80,9 +80,13 @@ struct Index {
             "planUnit integer," +
             "planDayTarget integer," +
             "planSumTarget integer)"
-    // 新建
+    // 新建数据库
     data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
       rdbStore.executeSql(SQL_CREATE_TABLE_MATTER)
+      rdbStore.executeSql(SQL_CREATE_TABLE_PLAN_GROUP)
+      rdbStore.executeSql(SQL_CREATE_TABLE_PLAN_UNIT)
+      rdbStore.executeSql(SQL_CREATE_TABLE_PLAN_REPEAT_TYPE)
+      rdbStore.executeSql(SQL_CREATE_TABLE_PLAN)
       console.info('create table done.')
     })
   }
