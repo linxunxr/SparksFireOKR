@@ -45,6 +45,7 @@ struct Index {
     this.selectPos = 4
     this.controller.changeIndex(4)
   }
+
   // 初始化数据库
   initRdb() {
     var context = featureAbility.getContext()
@@ -81,7 +82,7 @@ struct Index {
             "planDayTarget integer," +
             "planSumTarget integer)"
     // 新建数据库
-    data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
+      data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
       rdbStore.executeSql(SQL_CREATE_TABLE_MATTER)
       rdbStore.executeSql(SQL_CREATE_TABLE_PLAN_GROUP)
       rdbStore.executeSql(SQL_CREATE_TABLE_PLAN_UNIT)
@@ -91,10 +92,12 @@ struct Index {
     })
   }
 
-  aboutToAppear() {
+  onPageShow() {
     // 初始化数据库
     this.initRdb()
+    console.log("begin")
   }
+
 
   build() {
     // 导航栏对应页面

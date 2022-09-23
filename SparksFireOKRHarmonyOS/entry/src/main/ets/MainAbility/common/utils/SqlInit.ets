@@ -10,48 +10,38 @@ const planUnits: any[] = [
 ]
 
 const planUnitArray: Array<PlanUnit> = []
-<<<<<<< HEAD
+
 export function init() {
-    data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
+  data_rdb.getRdbStore(context, STORE_CONFIG, 1, function (err, rdbStore) {
+    for (item in planUnits) {
+      rdbStore.insert("planUnit", item)
+    }
+  }
+  )
+
+  data_rdb.getRdbStore(context, STORE_CONFIG, 1, function (err, rdbStore) {
+
+
+    data_rdb.getRdbStore(context, STORE_CONFIG, 1, function (err, rdbStore) {
       for (item in planUnits) {
-        rdbStore.insert("planUnit",item)
+        rdbStore.insert("planUnit", item)
       }
     }
-  )
+    )
 
-  data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
-=======
 
-data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
-    for (item in planUnits) {
-      rdbStore.insert("planUnit",item)
+    data_rdb.getRdbStore(context, STORE_CONFIG, 1, function (err, rdbStore) {
+      let promise = rdbStore.querySql("SELECT * FROM planUnit")
+      promise.then((resultSet) => {
+        const id = resultSet.getLong(resultSet.getColumnIndex("id"))
+        console.info("id: " + id)
+        console.log("resultSet column names:" + resultSet.columnNames)
+        console.log("resultSet column count:" + resultSet.columnCount)
+
+      }).catch((err) => {
+        console.info("Query failed, err: " + err)
+      })
     }
-  }
-)
-
-
-
-data_rdb.getRdbStore(context , STORE_CONFIG , 1 , function (err, rdbStore) {
->>>>>>> master
-    let promise = rdbStore.querySql("SELECT * FROM planUnit")
-    promise.then((resultSet) => {
-      const id = resultSet.getLong(resultSet.getColumnIndex("id"))
-      console.info("id: " + id)
-      console.log("resultSet column names:" + resultSet.columnNames)
-      console.log("resultSet column count:" + resultSet.columnCount)
-
-    }).catch((err) => {
-      console.info("Query failed, err: " + err)
-    })
-  }
-<<<<<<< HEAD
-  )
+    )
+  })
 }
-
-
-
-
-
-=======
-)
->>>>>>> master
