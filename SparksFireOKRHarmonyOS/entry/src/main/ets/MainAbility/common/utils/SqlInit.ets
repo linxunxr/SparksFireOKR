@@ -45,3 +45,9 @@ export function init() {
     )
   })
 }
+
+export function query() {
+  data_rdb.getRdbStore(context,STORE_CONFIG,1,function (err, rdbStore) {
+    let promise = rdbStore.querySql("SELECT * FROM ")
+  })
+}
